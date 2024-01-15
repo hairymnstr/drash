@@ -21,3 +21,7 @@ In the `example` folder there is an example CMake project that will make a progr
     make -j5
 
 Most of the code in the demo main function is setting up the Stdin file to be in non-canonical mode which means the code gets every keypress including backspace and cursor keys.  If you're using this code in an embedded system that has a hardware UART then you're probably already in non-canonical mode.
+
+# Option parsing
+
+The project makes use of an external reentrant option parsing library [optparse](https://github.com/skeeto/optparse) which is small and simple and means you can safely have multiple instances of DRASH running in separate RTOS threads in the same program for example.  Optparse is separately licensed in an even more permissive license and is directly compiled into the executable when used.
